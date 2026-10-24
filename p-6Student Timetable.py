@@ -1,14 +1,9 @@
-# Student Timetable Conflict Detection
-# Timetable format: (course, day, start_time, end_time, room)
-
 timetable = [
     ("Python", "Monday", 9, 11, "R101"),
     ("Mathematics", "Monday", 10, 12, "R102"),
     ("Physics", "Tuesday", 9, 11, "R103"),
     ("English", "Wednesday", 11, 12, "R101")
 ]
-
-# Unavailable rooms and their time periods
 unavailable_rooms = [
     ("R101", "Monday", 9, 10),
     ("R103", "Tuesday", 10, 12)
@@ -16,7 +11,6 @@ unavailable_rooms = [
 
 conflicts = []
 
-# Detect overlapping course periods
 for i in range(len(timetable)):
     for j in range(i + 1, len(timetable)):
         c1 = timetable[i]
@@ -28,7 +22,6 @@ for i in range(len(timetable)):
                     "Time conflict: " + c1[0] + " and " + c2[0]
                 )
 
-# Check room availability
 for course in timetable:
     for room in unavailable_rooms:
         if course[4] == room[0] and course[1] == room[1]:
@@ -38,7 +31,6 @@ for course in timetable:
                     " uses unavailable room " + course[4]
                 )
 
-# Display existing timetable
 print("========== STUDENT TIMETABLE ==========")
 
 for course in timetable:
@@ -47,7 +39,6 @@ for course in timetable:
           str(course[3]) + ":00",
           "Room:", course[4])
 
-# Display conflicts
 print("\n========== CONFLICT REPORT ==========")
 
 if conflicts:
@@ -59,7 +50,6 @@ else:
     print("No conflicts detected.")
     print("Timetable Status: VALID")
 
-# Validate a proposed course
 print("\n========== PROPOSED COURSE VALIDATION ==========")
 
 proposed_course = (
