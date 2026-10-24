@@ -1,5 +1,3 @@
-# ATM Transaction Sequence Simulation
-
 balance = float(input("Enter initial balance: "))
 n = int(input("Enter number of transactions: "))
 
@@ -50,7 +48,6 @@ for i in range(n):
         rejected += 1
         transactions.append(["Invalid", amount, "Rejected"])
 
-# Display transaction summary
 print("\n========== ATM TRANSACTION SUMMARY ==========")
 print("Transaction\tAmount\tStatus")
 
