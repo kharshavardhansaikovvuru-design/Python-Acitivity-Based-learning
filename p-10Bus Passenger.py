@@ -1,5 +1,3 @@
-# Bus Passenger Occupancy Simulation
-
 passengers = int(input("Enter initial number of passengers: "))
 capacity = int(input("Enter maximum bus capacity: "))
 n = int(input("Enter number of stops: "))
@@ -19,7 +17,6 @@ else:
         boarded = int(input("Enter number of passengers boarding: "))
         alighted = int(input("Enter number of passengers alighting: "))
 
-        # Validate passenger counts
         if boarded < 0 or alighted < 0:
             print("Invalid passenger count! Enter non-negative values.")
             continue
@@ -28,7 +25,6 @@ else:
             print("Invalid transaction! More passengers cannot alight than are on the bus.")
             continue
 
-        # Update passenger count
         passengers = passengers - alighted + boarded
 
         total_boarded += boarded
@@ -36,14 +32,12 @@ else:
 
         print("Passengers after stop:", passengers)
 
-        # Check capacity
         if passengers > capacity:
             print("WARNING: Bus capacity exceeded!")
             violations += 1
         else:
             print("Bus occupancy is within capacity.")
 
-    # Final summary
     print("\n========== FINAL SUMMARY ==========")
     print("Total Passengers Boarded:", total_boarded)
     print("Total Passengers Alighted:", total_alighted)
@@ -55,5 +49,3 @@ else:
         print("Result: Capacity violations detected.")
     else:
         print("Result: No capacity violations detected.")
-
-    print("===================================")
