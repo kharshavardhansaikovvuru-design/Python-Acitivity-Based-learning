@@ -1,5 +1,3 @@
-# Food Waste Monitoring System
-
 days = []
 n = int(input("Enter the number of days: "))
 
@@ -17,7 +15,6 @@ for i in range(n):
     served = int(input("Enter number of meals served: "))
     leftovers = int(input("Enter number of leftover meals: "))
 
-    # Validate meal quantities
     if prepared < 0 or served < 0 or leftovers < 0:
         print("Invalid input! Quantities cannot be negative.")
         continue
@@ -26,13 +23,11 @@ for i in range(n):
         print("Invalid data! Served meals and leftovers exceed prepared meals.")
         continue
 
-    # Calculate wastage percentage
     if prepared > 0:
         wastage_percentage = (leftovers / prepared) * 100
     else:
         wastage_percentage = 0
 
-    # Store daily details
     days.append([
         day, prepared, served, leftovers, wastage_percentage
     ])
@@ -41,7 +36,6 @@ for i in range(n):
     total_served += served
     total_leftovers += leftovers
 
-# Display daily report
 print("\n========== FOOD WASTE MONITORING REPORT ==========")
 print("Day\tPrepared\tServed\tLeftovers\tWastage %")
 
@@ -54,7 +48,6 @@ for d in days:
     else:
         print("Wastage is within the acceptable limit on", d[0])
 
-# Calculate overall wastage percentage
 print("\n========== OVERALL SUMMARY ==========")
 print("Total Meals Prepared:", total_prepared)
 print("Total Meals Served:", total_served)
