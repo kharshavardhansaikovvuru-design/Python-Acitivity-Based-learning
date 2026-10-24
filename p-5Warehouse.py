@@ -1,5 +1,3 @@
-# Warehouse Inventory Reconciliation
-
 products = []
 n = int(input("Enter the number of products: "))
 
@@ -13,13 +11,10 @@ for i in range(n):
     closing_stock = int(input("Enter actual closing stock: "))
     minimum_stock = int(input("Enter minimum stock required: "))
 
-    # Calculate expected closing stock
     expected_stock = opening_stock + incoming - dispatched
 
-    # Detect stock discrepancy
     discrepancy = closing_stock - expected_stock
 
-    # Calculate replenishment requirement
     if closing_stock < minimum_stock:
         replenishment = minimum_stock - closing_stock
     else:
@@ -30,7 +25,6 @@ for i in range(n):
         expected_stock, closing_stock, discrepancy, replenishment
     ])
 
-# Display inventory reconciliation report
 print("\n========== INVENTORY RECONCILIATION REPORT ==========")
 print("Product\tOpening\tIncoming\tDispatched\tExpected\tActual\tDifference\tReplenish")
 
