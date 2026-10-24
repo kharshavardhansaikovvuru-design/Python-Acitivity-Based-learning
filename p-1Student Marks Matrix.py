@@ -1,10 +1,7 @@
-# Student Marks Matrix Analysis
-
 students = ["Arun", "Bhanu", "Charan", "Divya", "Esha"]
 
 subjects = ["Python", "C", "Mathematics", "English"]
 
-# Marks of students in different subjects
 marks = [
     [85, 78, 92, 88],
     [72, 80, 75, 70],
@@ -16,7 +13,6 @@ marks = [
 number_of_students = len(students)
 number_of_subjects = len(subjects)
 
-# Calculate student-wise statistics
 totals = []
 averages = []
 
@@ -36,7 +32,6 @@ for i in range(number_of_students):
         "Average =", round(average, 2)
     )
 
-# Identify the top-performing student
 highest_total = max(totals)
 top_index = totals.index(highest_total)
 
@@ -44,7 +39,6 @@ print("\nTOP-PERFORMING STUDENT")
 print("Name:", students[top_index])
 print("Total Marks:", highest_total)
 
-# Calculate subject-wise statistics
 print("\nSUBJECT-WISE ANALYSIS")
 print("-" * 45)
 
@@ -66,7 +60,6 @@ for j in range(number_of_subjects):
     if subject_average < 50:
         low_performing_subjects.append(subjects[j])
 
-# Display low-performing subjects
 print("\nLOW-PERFORMING SUBJECTS")
 
 if len(low_performing_subjects) > 0:
