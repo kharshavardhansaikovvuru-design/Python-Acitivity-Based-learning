@@ -1,5 +1,3 @@
-# Progressive Electricity Billing System
-
 months = ["January", "February", "March", "April"]
 bills = []
 
@@ -10,7 +8,6 @@ rebate_rate = 2
 for month in months:
     units = int(input("Enter electricity units consumed in " + month + ": "))
 
-    # Calculate charges using progressive slabs
     if units <= 100:
         energy_charge = units * 2
     elif units <= 200:
@@ -20,11 +17,9 @@ for month in months:
     else:
         energy_charge = (100 * 2) + (100 * 3) + (100 * 5) + (units - 300) * 7
 
-    # Calculate surcharge and rebate
     surcharge = energy_charge * surcharge_rate / 100
     rebate = energy_charge * rebate_rate / 100
 
-    # Calculate total bill
     total_bill = energy_charge + fixed_charge + surcharge - rebate
 
     bills.append(total_bill)
@@ -37,13 +32,11 @@ for month in months:
     print("Rebate: Rs.", round(rebate, 2))
     print("Total Electricity Bill: Rs.", round(total_bill, 2))
 
-# Compare bills across months
 print("\n--- Monthly Bill Comparison ---")
 
 for i in range(len(months)):
     print(months[i], ": Rs.", round(bills[i], 2))
 
-# Identify unusual increases
 for i in range(1, len(bills)):
     increase = bills[i] - bills[i - 1]
 
