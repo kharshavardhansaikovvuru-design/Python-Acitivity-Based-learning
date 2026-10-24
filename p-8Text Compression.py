@@ -1,5 +1,3 @@
-# Text Compression Using Character Runs
-
 def compress_text(text):
     if not text:
         return ""
@@ -14,13 +12,10 @@ def compress_text(text):
             encoded += text[i - 1] + str(count)
             count = 1
 
-    # Encode the final character run
     encoded += text[-1] + str(count)
 
     return encoded
 
-
-# Main program
 print("===== TEXT COMPRESSION USING CHARACTER RUNS =====")
 
 text = input("Enter a string: ")
