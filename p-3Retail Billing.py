@@ -1,5 +1,3 @@
-# Retail Billing with Multiple Discount Rules
-
 products = []
 total_amount = 0
 total_tax = 0
@@ -17,7 +15,6 @@ for i in range(n):
 
     amount = price * quantity
 
-    # Category-specific tax rates
     if category == "food":
         tax_rate = 5
     elif category == "electronics":
@@ -29,7 +26,6 @@ for i in range(n):
 
     tax = amount * tax_rate / 100
 
-    # Threshold-based discount
     if amount >= 5000:
         discount_rate = 15
     elif amount >= 2000:
@@ -41,11 +37,9 @@ for i in range(n):
 
     discount = amount * discount_rate / 100
 
-    # Maximum concession limit
     if discount > 1000:
         discount = 1000
 
-    # Calculate item total
     item_total = amount + tax - discount
 
     products.append([name, category, price, quantity, amount,
@@ -55,7 +49,6 @@ for i in range(n):
     total_tax += tax
     total_discount += discount
 
-# Generate itemized invoice
 print("\n========== RETAIL INVOICE ==========")
 print("Product\tCategory\tQty\tPrice\tAmount\tTax\tDiscount\tTotal")
 
